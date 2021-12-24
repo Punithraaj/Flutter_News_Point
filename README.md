@@ -46,4 +46,6 @@ Now it contains all the screen, thanks for your love and support 🙏
 ![Preview](Ui2.png)
 ![Preview](Ui3.png)
 ![Preview](Ui4.png)
+![Preview](Ui5.png)
+![Preview](Ui6.png)
 
