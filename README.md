@@ -12,7 +12,7 @@ App has a simple clean UI which and a UX. App follows app design conventions and
 - settings_ui: [link](https://pub.dev/packages/settings_ui)
 
 
-## Screens it contains:
+**Screens it contains:**
 
 => Home Screen
 
@@ -21,6 +21,15 @@ App has a simple clean UI which and a UX. App follows app design conventions and
 => Search Screen
 
 => About Us Screen
+
+**Packages we are using:**
+
+- Zero Cost for daily latest news apis
+- multiavatar: [link](https://pub.dev/packages/multiavatar)
+- font_awesome_flutter: [link](https://pub.dev/packages/font_awesome_flutter)
+- badges: [link](https://pub.dev/packages/badges)
+- persistent_bottom_nav_bar: [link](https://pub.dev/packages/persistent_bottom_nav_bar)
+- settings_ui: [link](https://pub.dev/packages/settings_ui)
 
 ## Some Feature:
 
