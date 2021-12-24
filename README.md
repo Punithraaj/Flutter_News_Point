@@ -31,6 +31,7 @@ App has a simple clean UI which and a UX. App follows app design conventions and
 - persistent_bottom_nav_bar: [link](https://pub.dev/packages/persistent_bottom_nav_bar)
 - settings_ui: [link](https://pub.dev/packages/settings_ui)
 
+**Some Feature:**
 ## Some Feature:
 
     - Zero Cost for daily latest news apis
