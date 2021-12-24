@@ -22,15 +22,6 @@ App has a simple clean UI which and a UX. App follows app design conventions and
 
 => About Us Screen
 
-**Packages we are using:**
-
-- Zero Cost for daily latest news apis
-- multiavatar: [link](https://pub.dev/packages/multiavatar)
-- font_awesome_flutter: [link](https://pub.dev/packages/font_awesome_flutter)
-- badges: [link](https://pub.dev/packages/badges)
-- persistent_bottom_nav_bar: [link](https://pub.dev/packages/persistent_bottom_nav_bar)
-- settings_ui: [link](https://pub.dev/packages/settings_ui)
-
 **Some Feature:**
 - Zero Cost for daily latest news apis
 - Get updated news after every 3 min
@@ -51,8 +42,8 @@ App has a simple clean UI which and a UX. App follows app design conventions and
 Now it contains all the screen, thanks for your love and support 🙏 
 
 ## Photos
-![Preview](/Ui11.png)
-![Preview](Ui22.png)
-![Preview](Ui33.png)
-![Preview](Ui44.png)
+![Preview](/Ui1.png)
+![Preview](Ui2.png)
+![Preview](Ui3.png)
+![Preview](Ui4.png)
 
