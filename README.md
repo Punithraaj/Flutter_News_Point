@@ -32,21 +32,21 @@ App has a simple clean UI which and a UX. App follows app design conventions and
 - settings_ui: [link](https://pub.dev/packages/settings_ui)
 
 **Some Feature:**
-    - Zero Cost for daily latest news apis
-    - Get updated news after every 3 min
-    - Get news with images and articles
-    - AUTO GETTING NEWS FROM NEWSAPI
-    - AUTO CACHE IMAGES, NEWS.
-    - AUTO MARKING NEWS AS FEATURED.
-    - AUTO DELETING EXPIRED NEWS.
-    - Beautiful Material Design.
-    - Bottom Navigation
-    - Banner Slider
-    - HOt News
-    - Suggested News
-    - Categories
-    - Internal Browser for read news.
-    - and more
+- Zero Cost for daily latest news apis
+- Get updated news after every 3 min
+- Get news with images and articles
+- AUTO GETTING NEWS FROM NEWSAPI
+- AUTO CACHE IMAGES, NEWS.
+- AUTO MARKING NEWS AS FEATURED.
+- AUTO DELETING EXPIRED NEWS.
+- Beautiful Material Design.
+- Bottom Navigation
+- Banner Slider
+- HOt News
+- Suggested News
+- Categories
+- Internal Browser for read news.
+- and more
 
 Now it contains all the screen, thanks for your love and support 🙏 
 
