@@ -1,16 +1,51 @@
-# flutter_news_24_7
+# News Point – Flutter News app with Newsapi
 
-A new Flutter project.
+App has a simple clean UI which and a UX. App follows app design conventions and the source is modular where you can easily tweek and do changes to the app.
 
-## Getting Started
+**Packages we are using:**
 
-This project is a starting point for a Flutter application.
+- flutter_svg: [link](https://pub.dev/packages/flutter_svg)
+-   multiavatar: [link](https://pub.dev/packages/multiavatar)
+-   font_awesome_flutter: [link](https://pub.dev/packages/font_awesome_flutter)
+-   badges: [link](https://pub.dev/packages/badges)
+-   persistent_bottom_nav_bar: [link](https://pub.dev/packages/persistent_bottom_nav_bar)
+-   settings_ui: [link](https://pub.dev/packages/settings_ui)
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Screens it contains:
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+=> Home Screen
+
+=> Source Screen
+
+=> Search Screen
+
+=> About Us Screen
+
+## Some Feature:
+
+    Zero Cost for daily latest news apis
+    Get updated news after every 3 min
+    Get news with images and articles
+    AUTO GETTING NEWS FROM NEWSAPI
+    AUTO CACHE IMAGES, NEWS.
+    AUTO MARKING NEWS AS FEATURED.
+    AUTO DELETING EXPIRED NEWS.
+    Beautiful Material Design.
+    Bottom Navigation
+    Banner Slider
+    HOt News
+    Suggested News
+    Categories
+    Internal Browser for read news.
+    and more
+
+
+Now it contains all the screen, thanks for your love and support 🙏 
+
+## Photos
+![Preview](/Ui11.png)
+![Preview](Ui22.png)
+![Preview](Ui33.png)
+![Preview](Ui44.png)
+
