@@ -4,13 +4,15 @@ App has a simple clean UI which and a UX. App follows app design conventions and
 
 **Packages we are using:**
 
-- flutter_svg: [link](https://pub.dev/packages/flutter_svg)
-- multiavatar: [link](https://pub.dev/packages/multiavatar)
-- font_awesome_flutter: [link](https://pub.dev/packages/font_awesome_flutter)
-- badges: [link](https://pub.dev/packages/badges)
-- persistent_bottom_nav_bar: [link](https://pub.dev/packages/persistent_bottom_nav_bar)
-- settings_ui: [link](https://pub.dev/packages/settings_ui)
-
+- cupertino_icons: [link](https://pub.dev/packages/cupertino_icons)
+- newsapi: [link](https://pub.dev/packages/newsapi)
+- hexcolor: [link](https://pub.dev/packages/hexcolor)
+- eva_icons_flutter: [link](https://pub.dev/packages/eva_icons_flutter)
+- carousel_slider: [link](https://pub.dev/packages/carousel_slider)
+- timeago: [link](https://pub.dev/packages/timeago)
+- rxdart: [link](https://pub.dev/packages/rxdart)
+- flutter_html: [link](https://pub.dev/packages/flutter_html)
+- url_launcher: [link](https://pub.dev/packages/url_launcher)
 
 **Screens it contains:**
 
