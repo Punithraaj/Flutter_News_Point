@@ -25,10 +25,11 @@ class ThemeChanger with ChangeNotifier {
       scaffoldBackgroundColor: Colors.black,
       appBarTheme: AppBarTheme(
         color: Colors.black,
-        textTheme: TextTheme(
-          headline6: TextStyle(
-              fontFamily: 'Poppins', fontSize: 18, color: Colors.white),
-        ),
+        titleTextStyle: TextStyle(
+          fontFamily: 'Poppins',
+          fontSize: 18,
+          color: Colors.white,
+      ),
       ),
     );
     return _themeData;
@@ -39,10 +40,11 @@ class ThemeChanger with ChangeNotifier {
       scaffoldBackgroundColor: Colors.white,
       appBarTheme: AppBarTheme(
         color: Colors.white,
-        textTheme: TextTheme(
-          headline6: TextStyle(
-              fontFamily: 'Poppins', fontSize: 18, color: Colors.black),
-        ),
+        titleTextStyle: TextStyle(
+          fontFamily: 'Poppins',
+          fontSize: 18,
+          color: Colors.black
+      ),
       ),
     );
     return _themeData;

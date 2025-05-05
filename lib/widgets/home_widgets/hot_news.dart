@@ -13,7 +13,7 @@ import 'package:flutter_news_24_7/utility/utility.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
 class HotNewsWidget extends StatefulWidget {
-  const HotNewsWidget({Key? key}) : super(key: key);
+  const HotNewsWidget({super.key});
 
   @override
   _HotNewsWidgetState createState() => _HotNewsWidgetState();

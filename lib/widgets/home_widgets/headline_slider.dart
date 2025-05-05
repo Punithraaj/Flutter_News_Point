@@ -11,7 +11,7 @@ import 'package:flutter_news_24_7/utility/utility.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
 class HeadlingSliderWidget extends StatefulWidget {
-  const HeadlingSliderWidget({Key? key}) : super(key: key);
+  const HeadlingSliderWidget({super.key});
 
   @override
   _HeadlingSliderWidgetState createState() => _HeadlingSliderWidgetState();
@@ -46,6 +46,9 @@ class _HeadlingSliderWidgetState extends State<HeadlingSliderWidget> {
 
   Widget _buildHeadlineSliderWidget(ArticleResponse data) {
     List<Article>? articles = data.articles;
+    if (articles.isEmpty) {
+      return SizedBox();
+    } else {
     return CarouselSlider(
         options: CarouselOptions(
           enlargeCenterPage: false,
@@ -53,6 +56,7 @@ class _HeadlingSliderWidgetState extends State<HeadlingSliderWidget> {
           viewportFraction: 0.7,
         ),
         items: getExpenseSliders(articles));
+    }
   }
 
   getExpenseSliders(List<Article> articles) {

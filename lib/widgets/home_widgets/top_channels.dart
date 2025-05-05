@@ -7,7 +7,7 @@ import 'package:flutter_news_24_7/screens/source_detail.dart';
 import 'package:flutter_news_24_7/style/theme.dart' as style;
 
 class TopChannelsWidget extends StatefulWidget {
-  const TopChannelsWidget({Key? key}) : super(key: key);
+  const TopChannelsWidget({super.key});
 
   @override
   _TopChannelsWidgetState createState() => _TopChannelsWidgetState();
@@ -28,7 +28,7 @@ class _TopChannelsWidgetState extends State<TopChannelsWidget> {
       stream: getSourcesBloc.subject.stream,
       builder: (context, AsyncSnapshot<SourceResponse> snapshot) {
         if (snapshot.hasData) {
-          if (snapshot.data!.error != null && snapshot.data!.error.isNotEmpty) {
+          if (snapshot.data!.error.isNotEmpty) {
             return Container();
           }
           return _buildSourcesWidget(snapshot.data!);
@@ -106,7 +106,7 @@ class _TopChannelsWidgetState extends State<TopChannelsWidget> {
                                 )
                               ],
                               image: DecorationImage(
-                                  fit: BoxFit.cover,
+                                  fit: BoxFit.fill,
                                   image: AssetImage(
                                       "assets/logos/${sources[index].id}.png")),
                             )),

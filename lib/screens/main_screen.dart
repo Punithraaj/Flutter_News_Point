@@ -88,37 +88,25 @@ class _MainScreenState extends State<MainScreen> {
                 items: const [
                   BottomNavigationBarItem(
                     // ignore: deprecated_member_use
-                    title: Padding(
-                        padding: EdgeInsets.only(top: 5.0),
-                        child: Text("Home",
-                            style: TextStyle(fontWeight: FontWeight.w600))),
+                    label: "Home",
                     icon: Icon(EvaIcons.homeOutline),
                     activeIcon: Icon(EvaIcons.home),
                   ),
                   BottomNavigationBarItem(
                     // ignore: deprecated_member_use
-                    title: Padding(
-                        padding: EdgeInsets.only(top: 5.0),
-                        child: Text("Sources",
-                            style: TextStyle(fontWeight: FontWeight.w600))),
+                    label: "Sources",
                     icon: Icon(EvaIcons.gridOutline),
                     activeIcon: Icon(EvaIcons.grid),
                   ),
                   BottomNavigationBarItem(
                     // ignore: deprecated_member_use
-                    title: Padding(
-                        padding: EdgeInsets.only(top: 5.0),
-                        child: Text("Search",
-                            style: TextStyle(fontWeight: FontWeight.w600))),
+                    label:"Search",
                     icon: Icon(EvaIcons.searchOutline),
                     activeIcon: Icon(EvaIcons.search),
                   ),
                   BottomNavigationBarItem(
                     // ignore: deprecated_member_use
-                    title: Padding(
-                        padding: EdgeInsets.only(top: 5.0),
-                        child: Text("About us",
-                            style: TextStyle(fontWeight: FontWeight.w600))),
+                    label:"About us",
                     icon: Icon(EvaIcons.infoOutline),
                     activeIcon: Icon(Icons.info),
                   ),

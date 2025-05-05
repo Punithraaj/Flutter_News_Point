@@ -4,7 +4,7 @@ import 'package:flutter_news_24_7/widgets/home_widgets/hot_news.dart';
 import 'package:flutter_news_24_7/widgets/home_widgets/top_channels.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   _HomeScreenState createState() => _HomeScreenState();

@@ -8,7 +8,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 class DetailNews extends StatefulWidget {
   final Article article;
-  const DetailNews({Key? key, required this.article}) : super(key: key);
+  const DetailNews({super.key, required this.article});
   @override
   // ignore: no_logic_in_create_state
   _DetailNewsState createState() => _DetailNewsState(article);
@@ -23,10 +23,11 @@ class _DetailNewsState extends State<DetailNews> {
       bottomNavigationBar: GestureDetector(
         onTap: () async {
           // if (await canLaunch(article.url)) {
+          print("Article url ${article.url}");
           await launch(
             article.url,
             forceSafariVC: true,
-            // forceWebView: true,
+            forceWebView: true,
             enableDomStorage: true,
           );
         },
@@ -52,6 +53,9 @@ class _DetailNewsState extends State<DetailNews> {
       appBar: AppBar(
         elevation: 0.0,
         backgroundColor: HexColor("1a1a2e"),
+        iconTheme: const IconThemeData(
+              color: Colors.white,
+            ),
         title: Text(
           article.title,
           style: TextStyle(

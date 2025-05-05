@@ -6,6 +6,8 @@ import 'package:hexcolor/hexcolor.dart';
 class AboutScreen extends StatelessWidget {
   bool lighttheme = false;
 
+  AboutScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -105,7 +107,7 @@ class AboutScreen extends StatelessWidget {
             alignment: Alignment.topCenter,
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 80.0),
-              child: Container(
+              child: SizedBox(
                 height: 130,
                 width: 130,
                 child: CircleAvatar(

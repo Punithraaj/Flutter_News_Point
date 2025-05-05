@@ -9,7 +9,7 @@ import 'package:timeago/timeago.dart' as timeago;
 import '../news_detail.dart';
 
 class SearchScreen extends StatefulWidget {
-  const SearchScreen({Key? key}) : super(key: key);
+  const SearchScreen({super.key});
 
   @override
   _SearchScreenState createState() => _SearchScreenState();
@@ -80,7 +80,6 @@ class _SearchScreenState extends State<SearchScreen> {
             ),
             autocorrect: false,
             // ignore: deprecated_member_use
-            autovalidate: true,
           ),
         ),
         Expanded(
@@ -88,8 +87,7 @@ class _SearchScreenState extends State<SearchScreen> {
           stream: searchBloc.subject.stream,
           builder: (context, AsyncSnapshot<ArticleResponse> snapshot) {
             if (snapshot.hasData) {
-              if (snapshot.data!.error != null &&
-                  snapshot.data!.error.isNotEmpty) {
+              if (snapshot.data!.error.isNotEmpty) {
                 return Container();
               }
               return _buildSourceNewsWidget(snapshot.data!);

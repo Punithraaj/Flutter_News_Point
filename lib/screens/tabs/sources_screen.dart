@@ -7,7 +7,7 @@ import 'package:flutter_news_24_7/model/source_response.dart';
 import '../source_detail.dart';
 
 class SourceScreen extends StatefulWidget {
-  const SourceScreen({Key? key}) : super(key: key);
+  const SourceScreen({super.key});
 
   @override
   _SourceScreenState createState() => _SourceScreenState();
@@ -105,7 +105,7 @@ class _SourceScreenState extends State<SourceScreen> {
                             image: DecorationImage(
                                 image: AssetImage(
                                     "assets/logos/${sources[index].id}.png"),
-                                fit: BoxFit.cover)),
+                                fit: BoxFit.fill)),
                       ),
                     ),
                     Container(

@@ -11,7 +11,7 @@ import 'news_detail.dart';
 
 class SourceDetail extends StatefulWidget {
   final Source source;
-  const SourceDetail({Key? key, required this.source}) : super(key: key);
+  const SourceDetail({super.key, required this.source});
   @override
   // ignore: no_logic_in_create_state
   _SourceDetailState createState() => _SourceDetailState(source);

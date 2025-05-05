@@ -1,6 +1,5 @@
 import 'package:flutter_news_24_7/model/article_response.dart';
 import 'package:flutter_news_24_7/repository/repository.dart';
-// import 'package:newsapi/newsapi.dart';
 import 'package:rxdart/rxdart.dart';
 
 class GetTopHeadlinesBloc {
