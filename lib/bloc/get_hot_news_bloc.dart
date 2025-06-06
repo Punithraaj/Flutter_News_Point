@@ -8,8 +8,12 @@ class GetHotNewsBloc {
       BehaviorSubject<ArticleResponse>();
 
   getHotNews() async {
+    try {
     ArticleResponse response = await _repository.getHotNews();
     _subject.sink.add(response);
+    } catch (error) {
+    _subject.sink.add(ArticleResponse.withError(error.toString()));
+    }
   }
 
   dispose() {
