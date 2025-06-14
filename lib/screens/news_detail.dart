@@ -6,130 +6,131 @@ import 'package:timeago/timeago.dart' as timeago;
 import 'package:flutter_news_24_7/style/theme.dart' as style;
 import 'package:url_launcher/url_launcher.dart';
 
-class DetailNews extends StatefulWidget {
+class DetailNews extends StatelessWidget {
   final Article article;
-  const DetailNews({super.key, required this.article});
-  @override
-  // ignore: no_logic_in_create_state
-  _DetailNewsState createState() => _DetailNewsState(article);
-}
 
-class _DetailNewsState extends State<DetailNews> {
-  final Article article;
-  _DetailNewsState(this.article);
+  const DetailNews({super.key, required this.article});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: GestureDetector(
         onTap: () async {
-          // if (await canLaunch(article.url)) {
-          print("Article url ${article.url}");
-          await launch(
-            article.url,
-            forceSafariVC: true,
-            forceWebView: true,
-            enableDomStorage: true,
-          );
+          final String rawUrl = article.url.trim();
+          if (rawUrl.isEmpty || !rawUrl.startsWith('http')) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(content: Text('Invalid article URL')),
+            );
+            return;
+          }
+
+          final Uri url = Uri.parse(rawUrl);
+
+          // Try opening in in-app WebView
+          if (!await launchUrl(url, mode: LaunchMode.inAppWebView)) {
+            // Fallback to external browser
+            if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Could not launch article')),
+              );
+            }
+          }
         },
         child: Container(
           height: 48.0,
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(color: HexColor("1a1a2e")),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: const <Widget>[
-              Text(
-                "Read More",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontFamily: "SFPro-Bold",
-                    fontSize: 15.0),
+          child: const Center(
+            child: Text(
+              "Read More",
+              style: TextStyle(
+                color: Colors.white,
+                fontFamily: "SFPro-Bold",
+                fontSize: 15.0,
               ),
-            ],
+            ),
           ),
         ),
       ),
       appBar: AppBar(
         elevation: 0.0,
         backgroundColor: HexColor("1a1a2e"),
-        iconTheme: const IconThemeData(
-              color: Colors.white,
-            ),
+        iconTheme: const IconThemeData(color: Colors.white),
         title: Text(
           article.title,
-          style: TextStyle(
-              fontSize: Theme.of(context).platform == TargetPlatform.iOS
-                  ? 17.0
-                  : 17.0,
-              color: Colors.white,
-              fontWeight: FontWeight.bold),
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          style: const TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 17,
+          ),
         ),
       ),
-      body: ListView(
-        children: <Widget>[
-          AspectRatio(
-            aspectRatio: 16 / 9,
-            child: FadeInImage.assetNetwork(
-                alignment: Alignment.topCenter,
-                placeholder: 'assets/img/placeholder.jpg',
-                image: article.urlToImage.isEmpty
-                    ? "http://to-let.com.bd/operator/images/noimage.png"
-                    : article.urlToImage,
-                fit: BoxFit.cover,
-                width: double.maxFinite,
-                height: MediaQuery.of(context).size.height * 1 / 3),
-          ),
-          Container(
-            padding: const EdgeInsets.all(10.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                const SizedBox(
-                  height: 10.0,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text(article.publishedAt.toString().substring(0, 10),
-                        style: const TextStyle(
-                            color: style.Colors.mainColor,
-                            fontWeight: FontWeight.bold)),
-                  ],
-                ),
-                const SizedBox(
-                  height: 10.0,
-                ),
-                GestureDetector(
-                  onTap: () {},
-                  child: Text(article.title,
-                      style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black,
-                          fontSize: 20.0)),
-                ),
-                const SizedBox(
-                  height: 10.0,
-                ),
-                Text(
-                  timeUntil(article.publishedAt),
-                  style: const TextStyle(color: Colors.grey, fontSize: 12.0),
-                ),
-                const SizedBox(
-                  height: 5.0,
-                ),
-                Html(
-                  data: article.content,
-                ),
-              ],
+      body: SafeArea(
+        child: ListView(
+          children: <Widget>[
+            Hero(
+              tag: article.urlToImage,
+              child: _buildNewsImage(article.urlToImage),
             ),
-          )
-        ],
+            Container(
+              padding: const EdgeInsets.all(12.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  const SizedBox(height: 10.0),
+                  Text(
+                    DateFormat('yyyy-MM-dd').format(article.publishedAt),
+                    style: const TextStyle(
+                      color: style.Colors.mainColor,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 10.0),
+                  Text(
+                    article.title,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                      fontSize: 20.0,
+                    ),
+                  ),
+                  const SizedBox(height: 10.0),
+                  Text(
+                    timeago.format(article.publishedAt, allowFromNow: true),
+                    style: const TextStyle(color: Colors.grey, fontSize: 12.0),
+                  ),
+                  const SizedBox(height: 5.0),
+                  Html(data: article.content),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
 
-  String timeUntil(DateTime date) {
-    return timeago.format(date, allowFromNow: true);
+  Widget _buildNewsImage(String imageUrl) {
+    final fallbackImage =
+        'https://via.placeholder.com/640x360.png?text=No+Image';
+
+    return AspectRatio(
+      aspectRatio: 16 / 9,
+      child: FadeInImage.assetNetwork(
+        placeholder: 'assets/img/placeholder.jpg',
+        image: imageUrl.isEmpty ? fallbackImage : imageUrl,
+        fit: BoxFit.cover,
+        width: double.infinity,
+        imageErrorBuilder: (context, error, stackTrace) {
+          return Image.asset(
+            'assets/img/placeholder.jpg',
+            fit: BoxFit.cover,
+            width: double.infinity,
+          );
+        },
+      ),
+    );
   }
 }
